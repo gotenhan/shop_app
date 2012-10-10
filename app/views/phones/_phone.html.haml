@@ -1,14 +1,15 @@
-.phone_short
-  %h1= phone.full_name
-  %p
-    %span<
-      %b<> CPU:&nbsp;
-      info phone.cpu
-    %span<
-      %b<> RAM:&nbsp;
-      info phone.ram
-    %span<
-      %b< OS:&nbsp;
-      = info "#{phone.os} #{phone.os_version}"
-  %p<
-    = link_to 'Szczegóły', phone_path(phone)
+%article.phone_short
+  %header.bar.clearfix
+    %span.title= phone.full_name
+    = link_to 'Szczegóły', phone_path(phone), class: 'right'
+  %section.inner
+    %p
+      %div<
+        %b<> CPU:&nbsp;
+        = info phone.cpu
+      %div<
+        %b<> RAM:&nbsp;
+        = info phone.ram
+      %div<
+        %b< OS:&nbsp;
+        = info "#{phone.os} #{phone.os_version}"

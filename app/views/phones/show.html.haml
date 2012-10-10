@@ -1,36 +1,41 @@
-%h1= @phone.full_name
-%h2 General:
-%p<
-  %b<> Manufacturer:&nbsp;
-  = @phone.manufacturer
-%p<
-  %b<> Name:&nbsp;
-  = @phone.name
-%p<
-  %b<> Model codename:&nbsp;
-  = @phone.model_name
-%h2 Technical
-%p<
-  %b<> CPU:&nbsp;
-  = info @phone.cpu
-%p<
-  %b<> GPU:&nbsp;
-  = info @phone.gpu
-%p<
-  %b<> Ram:&nbsp;
-  = info @phone.ram
-%h2 Connectivity
-%p<
-  %b<> Wi-Fi:&nbsp;
-  = feature @phone.wifi
-%p<
-  %b<> Bluetooth:&nbsp;
-  = feature @phone.bluetooth, @phone.bluetooth.to_s
-%p<
-  %b<> GPS:&nbsp;
-  = feature @phone.gps
-%h2 Software
-%p< 
-  %b<> OS:&nbsp;
-  = info @phone.os
-  &nbsp;#{@phone.os_version if @phone.os && @phone.os_version}
+%article.phone
+  %header.bar.clearfix
+    %span.title= @phone.full_name
+  %section.inner
+    %h2 General:
+    %p<
+      %b<> Manufacturer:&nbsp;
+      = @phone.manufacturer
+    %p<
+      %b<> Name:&nbsp;
+      = @phone.name
+    %p<
+      %b<> Model codename:&nbsp;
+      = @phone.model_name
+  %section.inner
+    %h2 Technical
+    %p<
+      %b<> CPU:&nbsp;
+      = info @phone.cpu
+    %p<
+      %b<> GPU:&nbsp;
+      = info @phone.gpu
+    %p<
+      %b<> Ram:&nbsp;
+      = info @phone.ram
+  %section.inner
+    %h2 Connectivity
+    %p<
+      %b<> Wi-Fi:&nbsp;
+      = feature @phone.wifi
+    %p<
+      %b<> Bluetooth:&nbsp;
+      = feature @phone.bluetooth, @phone.bluetooth.to_s
+    %p<
+      %b<> GPS:&nbsp;
+      = feature @phone.gps
+    %h2 Software
+    %p< 
+      %b<> OS:&nbsp;
+      = info @phone.os
+      &nbsp;#{@phone.os_version if @phone.os && @phone.os_version}

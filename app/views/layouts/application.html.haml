@@ -2,8 +2,14 @@
 %html
   %head
     %title Sklep z telefonami komórkowymi 
+    %meta{ 'http-equiv'.to_sym =>  "content-type", :content => "text/html", charset: "UTF-8" }
   = stylesheet_link_tag    "application", :media => "all"
   = javascript_include_tag "application" 
   = csrf_meta_tags
   %body
-    = yield
+    = render 'header'
+    = render 'navbar'
+    #content
+      = yield
+    #footer 
+      Autor: Adrian Dyliński. Wszelkie prawa zastrzeżone.

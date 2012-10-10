@@ -1,5 +1,5 @@
-class ShopController < ActionController::Base
+class ShopController < ApplicationController
   def index
-    render text: 'Hello in my shop!'
+    render text: 'Hello in my shop!', layout: 'application'
   end
 end
