@@ -3,7 +3,7 @@
   %p
     %span<
       %b<> CPU:&nbsp;
-      info phone.processor
+      info phone.cpu
     %span<
       %b<> RAM:&nbsp;
       info phone.ram
@@ -11,5 +11,4 @@
       %b< OS:&nbsp;
       = info "#{phone.os} #{phone.os_version}"
   %p<
-    = link_to 'See more', phone_path(phone)
-  
+    = link_to 'Szczegóły', phone_path(phone)
