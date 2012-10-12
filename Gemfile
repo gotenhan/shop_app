@@ -6,7 +6,6 @@ gem 'pg'
 gem 'haml-rails'
 gem 'jquery-rails'
 
-
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -16,4 +15,6 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
