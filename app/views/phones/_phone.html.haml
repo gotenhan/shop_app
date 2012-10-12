@@ -1,0 +1,15 @@
+.phone_short
+  %h1= phone.full_name
+  %p
+    %span<
+      %b<> CPU:&nbsp;
+      info phone.processor
+    %span<
+      %b<> RAM:&nbsp;
+      info phone.ram
+    %span<
+      %b< OS:&nbsp;
+      = info "#{phone.os} #{phone.os_version}"
+  %p<
+    = link_to 'See more', phone_path(phone)
+  

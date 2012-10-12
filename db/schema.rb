@@ -11,6 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20121011230246) do
+
+  create_table "phones", :force => true do |t|
+    t.string   "name", null: false
+    t.string   "model_name"
+    t.string   "manufacturer", null: false
+    t.integer  "ram"
+    t.string   "processor"
+    t.string   "gpu"
+    t.boolean  "gps"
+    t.boolean  "wifi"
+    t.float    "bluetooth"
+    t.string   "os"
+    t.string   "os_version"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
