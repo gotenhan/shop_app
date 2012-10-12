@@ -1,1 +1,4 @@
-= render @phones
+%header
+  %h1 Lista wszystkich telefonów
+%article
+  = (render @phones) || 'Brak telefonów do wyświetlenia'
