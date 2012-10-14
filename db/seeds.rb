@@ -7,6 +7,18 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
 
+smartfony = Category.create( {
+  name: 'Smartfony'
+})
+
+dotykowe = Category.create( {
+  name: 'Dotykowe'
+})
+
+promocje = Category.create( {
+  name: 'Promocje'
+})
+
 Phone.create( { name: 'Xperia S',
   model_name: 'LT26i',
   manufacturer: 'Sony',
@@ -17,8 +29,10 @@ Phone.create( { name: 'Xperia S',
   wifi: true,
   bluetooth: 2.1,
   os: 'Android',
-  os_version: '4.0.4 Icecream Sandwich'
+  os_version: '4.0.4 Icecream Sandwich',
+  categories: [smartfony, dotykowe]
 })
+
 Phone.create( {
   name: 'iPhone 5',
   model_name: 'N42',
@@ -32,6 +46,7 @@ Phone.create( {
   os: 'iOS',
   os_version: '6'
 })
+
 Phone.create( {
   name: 'Lumia 920',
   model_name: 'Phi',
@@ -43,5 +58,8 @@ Phone.create( {
   wifi: true,
   bluetooth: 3.1,
   os: 'MS Windows Phone',
-  os_version: '8'
+  os_version: '8',
+  categories: [smartfony, promocje]
 })
+
+

@@ -3,7 +3,7 @@ class CreatePhones < ActiveRecord::Migration
     create_table :phones do |t|
       t.string :name, null: false
       t.string :model_name
-      t.string :manufacturer null: false
+      t.string :manufacturer, null: false
       t.integer :ram
       t.string :processor
       t.string :gpu
