@@ -2,18 +2,18 @@
   %header.bar.clearfix
     %span.title= @phone.full_name
   %section.inner
-    %h2 General:
+    %h2 Ogólne:
     %p<
-      %b<> Manufacturer:&nbsp;
+      %b<> Producent:&nbsp;
       = @phone.manufacturer
     %p<
-      %b<> Name:&nbsp;
+      %b<> Nazwa:&nbsp;
       = @phone.name
     %p<
-      %b<> Model codename:&nbsp;
+      %b<> Model:&nbsp;
       = @phone.model_name
   %section.inner
-    %h2 Technical
+    %h2 Dane techniczne
     %p<
       %b<> CPU:&nbsp;
       = info @phone.cpu
@@ -24,7 +24,7 @@
       %b<> Ram:&nbsp;
       = info @phone.ram
   %section.inner
-    %h2 Connectivity
+    %h2 Łączność
     %p<
       %b<> Wi-Fi:&nbsp;
       = feature @phone.wifi
@@ -34,7 +34,7 @@
     %p<
       %b<> GPS:&nbsp;
       = feature @phone.gps
-    %h2 Software
+    %h2 Oprogramowanie
     %p< 
       %b<> OS:&nbsp;
       = info @phone.os
