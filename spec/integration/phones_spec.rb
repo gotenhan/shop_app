@@ -26,8 +26,8 @@ feature 'User visits phones index page' do
       user.sees_phone!(@phone2)
     end
 
-    scenario "sees the CPU, RAM and OS section of phone" do
-      user.sees_phone_details(@phone1, :cpu, :os, :ram)
+    scenario "sees the price, CPU, RAM and OS section of phone" do
+      user.sees_phone_details(@phone1, { price: 'Cena', cpu: 'CPU', os: 'OS', ram: 'RAM'})
     end
 
     scenario "sees the details links" do

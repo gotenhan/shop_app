@@ -1,6 +1,7 @@
 %article.phone
   %header.bar.clearfix
-    %span.title= @phone.full_name
+    %span.title.left= @phone.full_name
+    %span.right Cena: #{info @phone.price.to_s} zł
   %section.inner
     %h2 Ogólne:
     %p<

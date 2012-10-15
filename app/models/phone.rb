@@ -3,6 +3,7 @@ class Phone < ActiveRecord::Base
   attr_accessible :bluetooth, :gps, :wifi
   attr_accessible :gpu, :cpu, :ram 
   attr_accessible :os, :os_version 
+  attr_accessible :price
   attr_accessible :categories
 
   validates :name, presence: true

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121014023155) do
+ActiveRecord::Schema.define(:version => 20121015232234) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(:version => 20121014023155) do
   end
 
   create_table "phones", :force => true do |t|
-    t.string   "name",         :null => false
+    t.string   "name",                          :null => false
     t.string   "model_name"
-    t.string   "manufacturer", :null => false
+    t.string   "manufacturer",                  :null => false
     t.integer  "ram"
     t.string   "cpu"
     t.string   "gpu"
@@ -36,8 +36,9 @@ ActiveRecord::Schema.define(:version => 20121014023155) do
     t.float    "bluetooth"
     t.string   "os"
     t.string   "os_version"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.decimal  "price",        :default => 0.0
   end
 
 end

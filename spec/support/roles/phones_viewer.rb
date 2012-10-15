@@ -1,4 +1,5 @@
 #encoding: utf-8
+require 'spec_helper'
 
 module Role
   module PhonesViewer
@@ -13,9 +14,9 @@ module Role
       sees! phone.full_name 
     end
 
-    def sees_phone_details(phone, *details_arr)
-      details_arr.each do |detail|
-        sees! detail.to_s.upcase
+    def sees_phone_details(phone, details)
+      details.each do |detail, text|
+        sees! text
         sees! phone.send(detail).to_s
       end
     end
