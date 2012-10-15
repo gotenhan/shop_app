@@ -1,5 +1,8 @@
 class ShopController < ApplicationController
+  respond_to :html
+
   def index
-    render text: 'Hello in my shop!', layout: 'application'
+    @categories = Category.all
+    respond_with :categories
   end
 end
