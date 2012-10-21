@@ -6,9 +6,6 @@ gem 'pg'
 gem 'haml-rails'
 gem 'jquery-rails'
 
-gem 'spork'
-gem 'watchr'
-
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -16,8 +13,13 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'spork-rails'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'guard'
+  gem 'guard-spork'
+  gem 'guard-rspec'
+  gem 'guard-bundler'
 end
