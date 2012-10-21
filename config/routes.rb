@@ -1,6 +1,8 @@
 ShopApp::Application.routes.draw do
   root to: 'shop#index'
 
-  resources :phones
-  resources :categories
+  constraints id: '\d+' do
+    resources :phones, only: [:index, :show]
+    resources :categories, only: [:index, :show]
+  end
 end
