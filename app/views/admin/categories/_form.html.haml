@@ -1,0 +1,9 @@
+.phone_form
+  = semantic_form_for @category, url: action_url do |f|
+    = f.inputs do
+      = f.input :name, label: 'Nazwa'
+
+    = f.actions do 
+      = f.action :submit, label: 'Zapisz'
+      = f.action :cancel, label: 'Anuluj'
+

@@ -1,0 +1,12 @@
+- @categories.each do |category|
+  .clearfix
+    %span.left
+      = category.name 
+    %span.right
+      = link_to 'Szczegóły', admin_category_path(category)
+    %span.right
+      = link_to 'Edytuj', edit_admin_category_path(category)
+    %span.right
+      = link_to 'Usuń', admin_category_path(category), method: 'delete'
+%p
+  = link_to 'Dodaj', new_admin_category_path

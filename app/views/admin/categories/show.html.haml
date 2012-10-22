@@ -1,0 +1,4 @@
+= render template: 'categories/show', category: @category
+= link_to 'Wstecz', :back
+= link_to 'Usuń', admin_category_path(@category), method: 'delete'
+= link_to 'Edytuj', edit_admin_category_path(@category)

@@ -1,2 +1,2 @@
 %h1= @category.name
-= render @category.phones
+= render partial: 'phones/phone', collection: @category.phones 
