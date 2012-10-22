@@ -15,7 +15,7 @@ end
 group :development, :test do
   gem 'spork-rails'
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', require:false
   gem 'capybara'
   gem 'database_cleaner'
   gem 'guard'
