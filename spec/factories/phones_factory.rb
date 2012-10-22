@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :phone do
     name 'Phone'
     manufacturer 'Manufacturer'
+    price 10.01
   end
 
   factory :phone_full, class: Phone do
@@ -17,5 +18,6 @@ FactoryGirl.define do
     wifi true
     gps false
     bluetooth 2.1
+    price 11.11
   end
 end
