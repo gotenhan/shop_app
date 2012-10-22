@@ -64,4 +64,8 @@ Phone.create( {
   categories: [smartfony, promocje]
 })
 
-
+AdminUser.create( {
+  email: 'test@email.com',
+  password: 'testpass',
+  password_confirmation: 'testpass'
+})

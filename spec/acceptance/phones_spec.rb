@@ -47,14 +47,19 @@ feature 'User visits phones index page and' do
 end
 
 feature 'Admin visits phones index page and' do
-  let (:user) { TestUser.new.extend(Role::PhonesViewer) }
+  let (:user) { 
+    TestUser.new.
+      extend(Role::PhonesViewer).
+      extend(Role::Admin)
+  }
   
   background :each do
+    FactoryGirl.create :admin_user
     @phone1 = FactoryGirl.create :phone
     @phone2 = FactoryGirl.create :phone_full
 
     user.visits_admin_phones
-    #user.login
+    user.login_as_admin
   end
 
   scenario "sees the admin/show links" do
@@ -84,12 +89,19 @@ feature 'Admin visits phones index page and' do
 end
 
 feature 'Admin visits phones new page' do
-  let (:user) { TestUser.new.extend(Role::PhonesViewer) }
+  let (:user) { 
+    TestUser.new.
+      extend(Role::PhonesViewer).
+      extend(Role::Admin)
+  }
 
   background :each do
+    FactoryGirl.create :admin_user
     FactoryGirl.create :category
 
     user.visits_admin_phones
+    user.login_as_admin
+
     user.click_on 'Dodaj'
   end
 
@@ -107,13 +119,20 @@ feature 'Admin visits phones new page' do
 end
 
 feature 'Admin visits phones edit page' do
-  let (:user) { TestUser.new.extend(Role::PhonesViewer) }
+  let (:user) { 
+    TestUser.new.
+      extend(Role::PhonesViewer).
+      extend(Role::Admin)
+  }
 
   background :each do
+    FactoryGirl.create :admin_user
     FactoryGirl.create :category
     @phone = FactoryGirl.create :phone
 
     user.visits_admin_phones
+    user.login_as_admin
+
     user.click_on 'Edytuj'
   end
 

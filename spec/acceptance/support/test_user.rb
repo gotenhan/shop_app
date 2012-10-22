@@ -42,20 +42,6 @@ class TestUser
     expect(page).to have_field_set(name)
   end
 
-  def sees_login_box!
-    within 'login_box' do
-      sees_field! 'Użytkownik'
-      sees_field! 'Hasło'
-      sees_button! 'Zaloguj'
-    end
-  end
-
-  def login(user, pass)
-    fill_in 'Użytkownik', with: user
-    fill_in 'Hasło', with: pass
-    click_on 'Zaloguj'
-  end
-
   def method_missing(method_sym, *args, &block)
     page.send(method_sym, *args, &block)
   end

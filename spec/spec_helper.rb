@@ -25,6 +25,8 @@ Spork.prefork do
     config.use_transactional_fixtures = false
     config.infer_base_class_for_anonymous_controllers = false
     config.order = "random"
+    config.treat_symbols_as_metadata_keys_with_true_values = true
+    config.include Devise::TestHelpers, type: :controller
 
     config.before :each do
       DatabaseCleaner.start
@@ -33,7 +35,6 @@ Spork.prefork do
       DatabaseCleaner.clean
     end
   end
-
 end
 
 Spork.each_run do
