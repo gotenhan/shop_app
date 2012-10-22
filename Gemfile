@@ -5,6 +5,7 @@ gem 'rails', '3.2.8'
 gem 'pg'
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'formtastic'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

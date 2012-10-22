@@ -42,14 +42,20 @@ module Role
       sees_link! 'Dodaj', href: new_admin_phone_path
     end
 
-    def sees_phone_form
+    def sees_phone_form!
       within('.phone_form') do
+        sees_field! 'Nazwa*'
+        sees_field! 'Model'
+        sees_field! 'Producent*'
+        sees_field! 'Procesor'
+        sees_field! 'Akcelerator graficzny'
+        sees_field! 'Pamięć RAM'
+        sees_select! 'System operacyjny'
+        sees_field! 'Wersja systemu operacyjnego'
+        within_fieldset 'Kategorie' do
+          sees_field! 'Testowa kategoria'
+        end
         sees_button! 'Zapisz'
-        sees_field! 'Nazwa'
-        sees_field! 'Producent'
-        sees_field! 'CPU'
-        sees_field! 'GPU'
-        sees_field! 'RAM'
       end
     end
   end

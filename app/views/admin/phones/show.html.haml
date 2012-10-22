@@ -1,0 +1,4 @@
+= render template: 'phones/show', phone: @phone
+= link_to 'Wstecz', :back
+= link_to 'Usuń', admin_phone_path(@phone), method: 'delete'
+= link_to 'Edytuj', edit_admin_phone_path(@phone)

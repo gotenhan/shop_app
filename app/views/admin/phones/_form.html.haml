@@ -1,0 +1,17 @@
+.phone_form
+  = semantic_form_for @phone, url: action_url do |f|
+    = f.inputs do
+      = f.input :name, label: 'Nazwa'
+      = f.input :model_name, label: 'Model'
+      = f.input :manufacturer, label: 'Producent', required: true
+      = f.input :cpu, label: 'Procesor'
+      = f.input :gpu, label: 'Akcelerator graficzny'
+      = f.input :ram, label: 'Pamięć RAM'
+      = f.input :os, label: 'System operacyjny', as: 'select', collection: ['Android', 'iOS', 'Windows Phone']
+      = f.input :os_version, label: 'Wersja systemu operacyjnego'
+      = f.input :categories, label: 'Kategorie', as: 'check_boxes', collection: @categories
+
+    = f.actions do 
+      = f.action :submit, label: 'Zapisz'
+      = f.action :cancel, label: 'Anuluj'
+

@@ -10,8 +10,14 @@ class TestUser
     expect(page).to have_content(something)
   end
 
-  def within(selector, &blk)
-    page.within selector do
+  def within(*args, &blk)
+    page.within *args do
+      instance_exec &blk
+    end
+  end
+
+  def within_fieldset(*args, &blk)
+    page.within_fieldset *args do
       instance_exec &blk
     end
   end
@@ -25,7 +31,23 @@ class TestUser
   end
 
   def sees_field!(name)
-    expect(page).to have_button(name)
+    expect(page).to have_field(name)
+  end
+
+  def sees_select!(name)
+    expect(page).to have_select(name)
+  end
+
+  def sees_fieldset!(name)
+    expect(page).to have_field_set(name)
+  end
+
+  def sees_login_box!
+    within 'login_box' do
+      sees_field! 'Użytkownik'
+      sees_field! 'Hasło'
+      sees_button! 'Zaloguj'
+    end
   end
 
   def login(user, pass)
@@ -33,4 +55,9 @@ class TestUser
     fill_in 'Hasło', with: pass
     click_on 'Zaloguj'
   end
+
+  def method_missing(method_sym, *args, &block)
+    page.send(method_sym, *args, &block)
+  end
+
 end

@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :category do
-    string "category"
+    name "Testowa kategoria"
   end
 end

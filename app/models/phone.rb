@@ -6,6 +6,8 @@ class Phone < ActiveRecord::Base
   attr_accessible :price
   attr_accessible :categories
 
+  attr_accessible :category_ids
+
   validates :name, presence: true
   validates :manufacturer, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0 }
