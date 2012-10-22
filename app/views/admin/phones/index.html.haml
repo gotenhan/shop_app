@@ -1,0 +1,6 @@
+= link_to 'Dodaj', new_admin_phone_path
+- @phones.each do |phone|
+  = phone.name 
+  = link_to 'Szczegóły', admin_phone_path(phone)
+  = link_to 'Edytuj', edit_admin_phone_path(phone)
+  = link_to 'Usuń', admin_phone_path(phone), method: 'delete'

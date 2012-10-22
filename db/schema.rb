@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(:version => 20121015232234) do
     t.string   "os_version"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
-    t.decimal  "price",        :default => 0.0
+    t.decimal  "price",        :default => 0.00
   end
 
 end
