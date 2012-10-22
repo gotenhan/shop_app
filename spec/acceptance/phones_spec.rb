@@ -1,5 +1,5 @@
 #encoding: utf-8
-require 'spec_helper'
+require 'acceptance_helper'
 
 feature 'User visits phones index page' do
   let (:user) { TestUser.new.extend(Role::PhonesViewer) }
