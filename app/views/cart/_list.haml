@@ -1,10 +1,13 @@
-%header.bar Twój Koszyk
+%header.bar
+  Twój Koszyk
+  = link_to 'Zamów', confirm_order_path, method: 'put', class: 'right'
 .inner
   %ul 
     - @order.order_items.each do |order_item|
       %li 
         = link_to order_item.phone.full_name, phone_path(order_item.phone)
-        , #{order_item.quantity}*#{order_item.phone.price} zł
-        = link_to '[-]', add_phone_to_cart_path(order_item.phone)
-%b
-  Cena łącznie #{@order.total_price}
+        .right
+          #{order_item.quantity}*#{order_item.phone.price} zł
+          = link_to '[-]', remove_phone_from_cart_path(order_item.phone), method: 'put'
+  .cart_summary
+    Cena łącznie #{@order.total_price}

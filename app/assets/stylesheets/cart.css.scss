@@ -3,6 +3,7 @@
 #mini_cart {
   @include box;
  
+  position: relative;
   font-size: x-small; 
   ul {
     list-style-type:none;
@@ -10,5 +11,13 @@
     margin: 0px;
   }
   min-height: 150px;
+
+  .cart_summary {
+    font-weight: bold;
+    position: absolute;
+    bottom: 0px;
+  }
 }
+
+
 

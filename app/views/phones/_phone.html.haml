@@ -1,7 +1,7 @@
-%article.phone_short
-  %header.bar.clearfix
+%article.inner
+  %header.clearfix
     %span.title= phone.full_name
-    = link_to 'Dodaj do koszyk', add_phone_to_cart_path(phone), method: 'put'
+    = link_to 'Dodaj do koszyka', add_phone_to_cart_path(phone), method: 'put', class: 'right'
     = link_to 'Szczegóły', phone_path(phone), class: 'right'
   %section.inner
     %p

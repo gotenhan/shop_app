@@ -9,7 +9,3 @@ Produkty:
     %li 
       = link_to order_item.phone.name, phone_path(order_item.phone)
       , #{order_item.quantity} sztuk(i)
-      = link_to 'Usuń z koszyka', remove_phone_from_cart_path(order_item.phone_id), method: 'put' if current_buyers_order? && @order.confirmed
-- if !@order.confirmed && @order.order_items.size > 0 && current_buyers_order?
-  = form_tag '/cart/confirm', method: 'put' do |form|
-    = button_tag 'Potwierdź zamówienie' 

@@ -19,8 +19,8 @@
           #mini_categories
             = render template: 'categories/index'
         #content
+          = yield
           .notice= notice
           .alert= alert
-          = yield
       #footer 
         Autor: Adrian Dyliński. Wszelkie prawa zastrzeżone.

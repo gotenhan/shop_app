@@ -10,6 +10,7 @@
       = f.input :os, label: 'System operacyjny', as: 'select', collection: ['Android', 'iOS', 'Windows Phone']
       = f.input :os_version, label: 'Wersja systemu operacyjnego'
       = f.input :categories, label: 'Kategorie', as: 'check_boxes', collection: @categories
+      = f.input :price, label: 'Cena'
 
     = f.actions do 
       = f.action :submit, label: 'Zapisz'

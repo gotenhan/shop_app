@@ -1,7 +1,5 @@
 %article.phone
-  %header.bar.clearfix
-    %span.title.left= @phone.full_name
-    %span.right Cena: #{info @phone.price.to_s} zł
+  %header.bar= @phone.full_name
   %section.inner
     %h2 Ogólne:
     %p<
@@ -40,3 +38,6 @@
       %b<> OS:&nbsp;
       = info @phone.os
       &nbsp;#{@phone.os_version if @phone.os && @phone.os_version}
+  %header.bar.clearfix
+    .left Cena: #{info @phone.price.to_s} zł
+    .right= link_to 'Dodaj do koszyka', add_phone_to_cart_path(@phone)
