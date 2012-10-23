@@ -16,7 +16,7 @@ module ShopApp
     config.assets.version = '1.0'
 
     config.generators do |g|
-      g.test_framework :rspec, :views => false, :fixture => true
+      g.test_framework :rspec, :views => false, :fixture => false
       g.fixture_replacement :factory_girl, :dir => 'spec/factories'
       g.template_engine :haml
     end

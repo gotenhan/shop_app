@@ -51,12 +51,12 @@ ActiveRecord::Schema.define(:version => 20121023023456) do
   end
 
   create_table "order_items", :force => true do |t|
-    t.integer  "quantity",   :default => 0, :null => false
-    t.integer  "price",      :default => 0, :null => false
-    t.integer  "order_id",                  :null => false
-    t.integer  "phone_id",                  :null => false
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.integer  "quantity",   :default => 0,   :null => false
+    t.decimal  "price",      :default => 0.0, :null => false
+    t.integer  "order_id",                    :null => false
+    t.integer  "phone_id",                    :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   create_table "orders", :force => true do |t|

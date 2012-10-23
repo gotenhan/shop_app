@@ -21,12 +21,11 @@ class CartController < ApplicationController
   end
 
   def remove
-    current_order = @current_order.active_order
     current_order = @current_buyer.active_order
     ordered_item = current_order.order_items.find_by_phone_id(params[:id])
   
     if ordered_item.present?
-      ordered_item.quantity -= 1
+      items_left = ordered_item.quantity -= 1
       ordered_item.price -= ordered_item.phone.price
       if ordered_item.quantity == 0
         ordered_item.destroy
@@ -35,7 +34,7 @@ class CartController < ApplicationController
       end
     end
     current_order.save
-    redirect_to :back, notice: 'Usunięto z koszyka. Pozostało sztuk: '
+    redirect_to :back, notice: "Usunięto z koszyka. Pozostało sztuk: #{items_left}"
   end
 
   def confirm
