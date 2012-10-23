@@ -8,9 +8,11 @@ ShopApp::Application.routes.draw do
     resources :categories, only: [:index, :show]
 
     namespace :admin do
-      root to: 'admin#admin'
+      root to: 'admin#admin', as: 'admin'
       resources :phones
       resources :categories
+      resources :buyers, only: [:index, :show, :destroy]
+      resources :orders, only: [:index, :show, :destroy]
     end
   end
 end

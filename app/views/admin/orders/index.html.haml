@@ -1,0 +1,17 @@
+%table
+  %thead
+    %td Numer zamówienia
+    %td Data utworzenia
+    %td Data modyfikacji
+    %td Potwierdzony
+    %td
+  %tbody
+    - @orders.each do |order|
+      %tr
+        %td= order.id
+        %td= order.created_at
+        %td= order.updated_at
+        %td= feature order.confirmed
+        %td
+          = link_to 'Szczegóły', admin_order_path(order)
+          = link_to 'Usuń', admin_order_path(order), method: 'delete'

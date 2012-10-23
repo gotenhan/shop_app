@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121022224200) do
+ActiveRecord::Schema.define(:version => 20121023023456) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(:version => 20121022224200) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "buyers", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
     t.datetime "created_at", :null => false
@@ -40,6 +48,22 @@ ActiveRecord::Schema.define(:version => 20121022224200) do
   create_table "categories_phones", :id => false, :force => true do |t|
     t.integer "category_id", :null => false
     t.integer "phone_id",    :null => false
+  end
+
+  create_table "order_items", :force => true do |t|
+    t.integer  "quantity",   :default => 0, :null => false
+    t.integer  "price",      :default => 0, :null => false
+    t.integer  "order_id",                  :null => false
+    t.integer  "phone_id",                  :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  create_table "orders", :force => true do |t|
+    t.boolean  "confirmed"
+    t.integer  "buyer_id",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "phones", :force => true do |t|
