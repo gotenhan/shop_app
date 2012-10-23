@@ -1,6 +1,7 @@
 %article.phone_short
   %header.bar.clearfix
     %span.title= phone.full_name
+    = link_to 'Dodaj do koszyk', add_phone_to_cart_path(phone), method: 'put'
     = link_to 'Szczegóły', phone_path(phone), class: 'right'
   %section.inner
     %p
