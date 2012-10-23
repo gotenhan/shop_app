@@ -1,9 +1,8 @@
 @import 'colors';
 @import 'fonts';
+@import 'mixins';
 
 body {
-	margin: 0; 
-  padding: 2em;
 	background: white;
 	color: black;
 	font: $font;
@@ -47,48 +46,31 @@ header.bar {
   border-top: none;
 }
 
-.inner {
-  margin: 5px 5px 5px 15px;
+#page {
+  padding: 0px;
+  margin: 10px auto;
+  width: 854px;
 }
 
 #header {
+  @include box;
   position: relative;
   z-index: 0;
   display: block;
-  font-size: 9em;
+  font-size: 8em;
   height: 100px;
   background-color: $primary-5;
-  border: 2px solid $primary-2;
   text-shadow: -2px 2px 5px black;
   .header_phone { color: white; }
   .header_shop { color: $secondary-a-1; }
 }
 
-#content{
-  background-color: white;
-  border-left: 2px solid $primary-2;
-  border-right: 2px solid $primary-2;
-  margin: 0px;
-  padding: 0px;
-  min-height: 300px;
-}
-
-#footer{
-  background-color: $secondary-a-5;
-  color: $secondary-a-1;
-  border: 1px solid $secondary-a-1;
-  text-align: center;
-  padding: 5px;
-  margin: 0px;
-}
-
 #navigation {
-  display: block;
+  @include box;
   background-color: $secondary-a-5;
   color: $secondary-a-1;
+  border-color: $secondary-a-1;
   height: 25px;
-  border: 1px solid $secondary-a-1;
-  margin: 0px;
   ul {
     list-style-type:none;
     margin:0;
@@ -111,6 +93,34 @@ header.bar {
       }
     }
   }
+}
+
+#sidebar {
+  width: 240px;
+  height: auto;
+  float: left;
+}
+
+#content{
+  @include box;
+  min-height: 400px;
+  float: right;
+  width: 590px;
+}
+
+#footer{
+  @include box;
+  background-color: $secondary-a-5;
+  color: $secondary-a-1;
+  border: 1px solid $secondary-a-1;
+  text-align: center;
+  padding: 5px;
+  margin: 0px;
+}
+
+.inner {
+  margin: 5px 5px 5px 5px;
+  height: auto;
 }
 
 .left{ float: left; }

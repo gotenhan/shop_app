@@ -1,4 +1,0 @@
-= render template: 'admin/orders/show'
-- if (not @order.confirmed) && @order.order_items.size > 0
-  = form_tag 'cart/confirm', method: 'put' do |form|
-    = button_tag 'Potwierdź zamówienie' 

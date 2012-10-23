@@ -3,15 +3,24 @@
   %head
     %title Sklep z telefonami komórkowymi 
     %meta{ 'http-equiv'.to_sym =>  "content-type", :content => "text/html", charset: "UTF-8" }
-  = stylesheet_link_tag    "application", :media => "all"
+  = stylesheet_link_tag    "application", media: 'all'
+  = stylesheet_link_tag    "categories", media: 'all'
+  = stylesheet_link_tag    "cart", media: 'all'
   = javascript_include_tag "application" 
   = csrf_meta_tags
   %body
-    = render 'header'
-    = render 'navbar'
-    #content
-      .notice= notice
-      .alert= alert
-      = yield
-    #footer 
-      Autor: Adrian Dyliński. Wszelkie prawa zastrzeżone.
+    #page
+      = render 'header'
+      = render 'navbar'
+      .clearfix
+        #sidebar
+          #mini_cart
+            = render '/cart/list'
+          #mini_categories
+            = render template: 'categories/index'
+        #content
+          .notice= notice
+          .alert= alert
+          = yield
+      #footer 
+        Autor: Adrian Dyliński. Wszelkie prawa zastrzeżone.

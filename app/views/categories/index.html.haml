@@ -1,3 +1,5 @@
-Kategorie:
-- @categories.each do |category|
-  %p= link_to category.name, category_path(category)
+%header.bar
+  Kategorie:
+.inner
+  - @categories.each do |category|
+    %p= link_to category.name, category_path(category)

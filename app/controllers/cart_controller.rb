@@ -1,9 +1,11 @@
+#encoding: utf-8
+
 class CartController < ApplicationController
   respond_to :html
 
-  def list
+  def show
     @order = Order.find_by_id(@current_buyer.active_order)
-    respond_with 'cart/list'
+    respond_with 'cart/show'
   end
 
   def add

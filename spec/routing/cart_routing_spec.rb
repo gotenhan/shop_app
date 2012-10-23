@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 describe 'Routing cart' do
-  it 'should route GET /cart to cart#list' do
+  it 'should route GET /cart to cart#show' do
     expect(get: '/cart').to route_to({
       controller: 'cart',
-      action: 'list'
+      action: 'show'
     })
   end
 
@@ -39,6 +39,6 @@ describe 'Routing cart' do
   it 'should not route GET,POST,DELETE /cart/remove_phone/:id' do
     expect(get: '/cart/remove_phone/2').not_to be_routable
     expect(post: '/cart/remove_phone/2').not_to be_routable
-    expect(put: '/cart/remove_phone/2').not_to be_routable
+    expect(delete: '/cart/remove_phone/2').not_to be_routable
   end
 end

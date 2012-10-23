@@ -1,8 +1,16 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :assign_buyer
+  before_filter :assign_buyer, :assign_categories, :assign_order
 
   private 
+
+  def assign_order
+    @order = @current_buyer.active_order
+  end
+
+  def assign_categories
+    @categories = Category.all
+  end
 
   def assign_buyer
     @current_buyer = Buyer.find_by_id(cookies[:user_id]) if cookies[:user_id].present?
