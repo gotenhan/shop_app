@@ -18,6 +18,8 @@ class CartController < ApplicationController
     ordered_item.save
     current_order.save
     redirect_to :back, notice: 'Dodano do koszyka'
+  rescue ActionController::RedirectBackError
+    redirect_to phones_path, notice: 'Dodano do koszyka'
   end
 
   def remove
@@ -35,6 +37,8 @@ class CartController < ApplicationController
     end
     current_order.save
     redirect_to :back, notice: "Usunięto z koszyka. Pozostało sztuk: #{items_left}"
+  rescue ActionController::RedirectBackError
+    redirect_to phones_path, notice: 'Dodano do koszyka'
   end
 
   def confirm
