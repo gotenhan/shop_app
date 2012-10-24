@@ -61,6 +61,7 @@ header {
 
 #navigation {
   @include box;
+  margin: 0px;
   background-color: $secondary-a-5;
   color: $secondary-a-1;
   border-color: $secondary-a-1;
