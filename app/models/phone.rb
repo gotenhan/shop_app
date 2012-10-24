@@ -17,5 +17,6 @@ class Phone < ActiveRecord::Base
   def full_name
     n = "#{manufacturer} #{name}"
     n += " (#{model_name})" if model_name.present?
+    n
   end
 end

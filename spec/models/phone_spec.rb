@@ -9,12 +9,17 @@ describe Phone do
     it 'should create full name in format: manufacturer name (model)' do
       expect(@phone.full_name).to eql "Manufacturer Phone (superphone)"
     end
+
+    it 'should create full name without model' do
+      @phone.model_name = nil
+      expect(@phone.full_name).to eql "Manufacturer Phone"
+    end
   end
 
   describe '#new' do
     it 'should not allow to create phone without name' do
       phone = Phone.new
-      expect(phone.valid?).to be_false
+    expect(phone.valid?).to be_false
     expect(phone.errors.keys).to include(:name)
     end
 
