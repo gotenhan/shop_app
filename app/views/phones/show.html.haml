@@ -40,4 +40,4 @@
       &nbsp;#{@phone.os_version if @phone.os && @phone.os_version}
   %header.bar.clearfix
     .left Cena: #{info @phone.price.to_s} zł
-    .right= link_to 'Dodaj do koszyka', add_phone_to_cart_path(@phone)
+    .right= link_to 'Dodaj do koszyka', add_phone_to_cart_path(@phone), method: 'put'
