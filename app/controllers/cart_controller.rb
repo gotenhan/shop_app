@@ -42,9 +42,10 @@ class CartController < ApplicationController
   end
 
   def confirm
-    @current_buyer.active_order.confirmed = true
-    @current_buyer.active_order.save
-    @current_buyer.new_order
+    current_order = @current_buyer.active_order
+    current_order.confirmed = true
+    current_order.save
+    @current_buyer.save
     redirect_to phones_path
   end
 

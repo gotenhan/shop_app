@@ -1,0 +1,5 @@
+@import 'mixins';
+
+#mini_search_box {
+  @include box;
+}

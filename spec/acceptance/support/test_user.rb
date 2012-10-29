@@ -10,16 +10,8 @@ class TestUser
     expect(page).to have_content(something)
   end
 
-  def within(*args, &blk)
-    page.within *args do
-      instance_exec &blk
-    end
-  end
-
-  def within_fieldset(*args, &blk)
-    page.within_fieldset *args do
-      instance_exec &blk
-    end
+  def sees_selector!(something)
+    expect(page).to have_selector(something)
   end
 
   def sees_link!(name, options = {})

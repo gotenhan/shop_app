@@ -9,7 +9,7 @@ class Buyer < ActiveRecord::Base
   end
   
   def new_order
-    orders << Order.new(buyer_id: id)
+    orders << Order.create(buyer_id: id)
   end
 
 end

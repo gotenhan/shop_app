@@ -7,6 +7,7 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'formtastic'
 gem 'devise'
+gem 'ransack'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

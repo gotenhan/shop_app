@@ -1,0 +1,10 @@
+%header.bar Szukaj
+%article
+  = semantic_search_form_for (@search || Phone.search) do |f|
+    = f.inputs do
+      = f.input :full_name_cont, label: 'Nazwa'
+      = f.input :categories_id_in, label: 'Kategorie', as: 'check_boxes', collection: Category.all, hidden_field:false
+      = f.input :price_gt, label: 'Cena od'
+      = f.input :price_lt, label: 'Cena do'
+    = f.actions do
+      = f.action :submit, label: 'Szukaj'

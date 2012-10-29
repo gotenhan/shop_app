@@ -6,6 +6,7 @@
   = stylesheet_link_tag    "application", media: 'all'
   = stylesheet_link_tag    "categories", media: 'all'
   = stylesheet_link_tag    "cart", media: 'all'
+  = stylesheet_link_tag    "search", media: 'all'
   = javascript_include_tag "application" 
   = csrf_meta_tags
   %body
@@ -14,6 +15,8 @@
       = render 'navbar'
       .clearfix
         #sidebar
+          #mini_search_box
+            = render '/search/box'
           #mini_cart
             = render '/cart/list'
           #mini_categories
